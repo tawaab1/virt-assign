@@ -1,6 +1,6 @@
 #virt-assignment-3 Aisea Tawake
 
-version: "3.7"
+version: "3.8"
 services:
         flaskapp:
                 image: tawaab1/flaskapp:latest
