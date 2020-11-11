@@ -1,0 +1,31 @@
+#virt-assignment-3 tawaab1
+
+version: "3.7"
+services:
+        flaskapp:
+                image: tawaab1/flaskapp:latest
+                deploy:
+                        replicas: 3
+                networks:
+                        - app
+
+        ngix:
+                image: tawaab1/nginx:latest
+                deploy:
+                        replicas: 3
+                ports:
+                        - 8080:80
+                networks:
+                        - app
+                depends_on:
+                        - flaskapp
+
+        redis:
+                image: redis:5.0.6
+                networks:
+                        - app
+
+networks:
+        app:
+                driver: overlay
+
