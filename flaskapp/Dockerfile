@@ -1,5 +1,4 @@
 FROM ubuntu:16.04
-LABEL updated_on="2019-10-18 09:00"
 RUN apt-get update
 RUN apt-get -y upgrade
 RUN apt-get -y install python3 python3-setuptools python3-pip gunicorn3
